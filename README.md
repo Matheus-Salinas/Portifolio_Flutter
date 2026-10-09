@@ -1,17 +1,77 @@
-# portfolio_flutter
+# Portfólio Flutter Web
 
-A new Flutter project.
+Portfólio desenvolvido em **Flutter Web**, com layout responsivo e um dashboard de e-commerce animado em tempo real, publicado no **GitHub Pages**.
 
-## Getting Started
+**Acesse o site:** https://matheus-salinas.github.io/Portifolio_Flutter/
 
-This project is a starting point for a Flutter application.
+## Sobre o projeto
 
-A few resources to get you started if this is your first Flutter project:
+Aplicação criada para a atividade de portfólio, a partir de uma sugestão de layout. A página apresenta um projeto em destaque e reúne as seções abaixo:
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Card de destaque com tags, título, resumo e links (GitHub e Deploy)
+- Mockup de dashboard com gráfico que atualiza a cada 500 ms
+- Problema e solução
+- Arquitetura e tecnologias utilizadas
+- Características principais
+- Resultados e lições aprendidas
+- Sobre
+- Chamada para contato (e-mail e LinkedIn)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+O layout se adapta a telas de computador e de celular, com menu de navegação que rola até cada seção.
+
+## Tecnologias
+
+- [Flutter](https://flutter.dev/) (Web) e Dart
+- [url_launcher](https://pub.dev/packages/url_launcher) para abrir links e e-mail
+- GitHub Pages para hospedagem
+
+## Estrutura
+
+```
+portfolio_flutter/
+├── lib/
+│   └── main.dart      # Toda a interface do portfólio
+├── web/               # Arquivos da plataforma web
+├── pubspec.yaml       # Dependências do projeto
+└── README.md
+```
+
+## Como rodar localmente
+
+Pré-requisito: [Flutter SDK](https://docs.flutter.dev/get-started/install) instalado.
+
+```bash
+git clone https://github.com/Matheus-Salinas/Portifolio_Flutter.git
+cd Portifolio_Flutter
+flutter pub get
+flutter run -d chrome
+```
+
+## Como publicar no GitHub Pages
+
+1. Gere o build, usando o nome exato do repositório no `--base-href`:
+
+   ```bash
+   flutter build web --base-href /Portifolio_Flutter/ --release
+   ```
+
+2. Envie o conteúdo de `build/web` para a branch `gh-pages`:
+
+   ```bash
+   cd build/web
+   git init
+   git add .
+   git commit -m "Deploy Flutter Web"
+   git branch -m gh-pages
+   git remote add origin https://github.com/Matheus-Salinas/Portifolio_Flutter.git
+   git push -u origin gh-pages --force
+   ```
+
+3. No GitHub, vá em **Settings > Pages**, escolha a branch `gh-pages` com a pasta `/ (root)` e salve.
+
+Para atualizar o site depois de qualquer mudança, repita os passos 1 e 2.
+
+## Autor
+
+**Matheus Salinas**
+GitHub: [@Matheus-Salinas](https://github.com/Matheus-Salinas)
